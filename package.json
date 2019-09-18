@@ -65,5 +65,8 @@
   "bugs": {
     "url": "https://github.com/propero-oss/emblazon/issues"
   },
-  "homepage": "https://github.com/propero-oss/emblazon#readme"
+  "homepage": "https://github.com/propero-oss/emblazon#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
