@@ -1,0 +1,10 @@
+{
+  "name": "@propero/emblazon",
+  "version": "0.0.1",
+  "description": "Typescript Decorators Made Easy",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": ["emblazon", "typescript", "decorator", "extension"],
+  "author": "Propero Team <team@propero.dev>",
+  "license": "MIT"
+}
