@@ -2,9 +2,68 @@
   "name": "@propero/emblazon",
   "version": "0.0.1",
   "description": "Typescript Decorators Made Easy",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": ["emblazon", "typescript", "decorator", "extension"],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "*.md",
+    "docs"
+  ],
+  "scripts": {
+    "test": "karma start karma-ci.conf.js",
+    "test:watch": "karma start karma.conf.js",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --fix --project tsconfig.json",
+    "lint:watch": "tslint --watch --project tsconfig.json",
+    "lint:watch:fix": "tslint --watch --fix --project tsconfig.json",
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "docs": "typedoc --out docs src",
+    "meta": "npm run meta:authors && npm run meta:changelog",
+    "meta:authors": "ngm authors --md --out AUTHORS.md",
+    "meta:changelog": "ngm changelog --ignore changelog --ignore authors --md --out CHANGELOG.md"
+  },
+  "keywords": [
+    "emblazon",
+    "typescript",
+    "decorator",
+    "extension"
+  ],
   "author": "Propero Team <team@propero.dev>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@propero/ngm": "^1.2.3",
+    "@types/jasmine": "^3.4.0",
+    "@types/node": "^12.7.5",
+    "dts-bundle": "^0.7.3",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "karma": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cli": "^2.0.0",
+    "karma-coverage": "^2.0.1",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^4.0.2",
+    "puppeteer": "^1.20.0",
+    "remove-empty-directories": "0.0.1",
+    "ts-loader": "^6.1.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.20.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "jasmine-core": "^3.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/propero-oss/emblazon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/propero-oss/emblazon/issues"
+  },
+  "homepage": "https://github.com/propero-oss/emblazon#readme"
 }
