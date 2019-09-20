@@ -5,9 +5,9 @@ const dts = require('dts-bundle');
 const removeEmpty = require('remove-empty-directories');
 
 const paths = {
-  src: './src',
+  src: './test',
   dist: './dist',
-  entry: './src/index.ts'
+  entry: './test/index.ts'
 };
 
 Object.keys(paths).forEach(key => paths[key] = path.join(__dirname, paths[key]));
