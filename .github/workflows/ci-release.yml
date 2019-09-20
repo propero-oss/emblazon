@@ -1,42 +1,40 @@
 name: CI / CD Release
 on:
   push:
-    branches-ignore:
-      - '*'
     tags:
-      - 'v*'
+    - 'v*'
 
 jobs:
   npm-ci-cd:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with: {node-version: 10.x}
-      - name: npm-install
-        run:  npm install
-      - name: npm-lint
-        run:  npm run lint
-      - name: npm-build
-        run:  npm run build
-      - name: npm-test
-        uses: paambaati/codeclimate-action@v2.2.1
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.cc_token}}
-        with:
-          coverageCommand: npm run test
-      - name: npm-meta
-        run:  npm run meta
-      - name: npm-docs
-        run:  npm run docs
-      - name: gh-pages
-        uses: maxheld83/ghpages@v0.2.1
-        env:
-          BUILD_DIR: docs/
-          GH_PAT: ${{secrets.gh_pages_token}}
-      - name: npm-publish
-        run: |
-          npm version from-git
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with: {node-version: 10.x}
+    - name: npm-install
+      run:  npm install
+    - name: npm-lint
+      run:  npm run lint
+    - name: npm-build
+      run:  npm run build
+    - name: npm-test
+      uses: paambaati/codeclimate-action@v2.2.1
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.cc_token}}
+      with:
+        coverageCommand: npm run test
+    - name: npm-meta
+      run:  npm run meta
+    - name: npm-docs
+      run:  npm run docs
+    - name: gh-pages
+      uses: maxheld83/ghpages@v0.2.1
+      env:
+        BUILD_DIR: docs/
+        GH_PAT: ${{secrets.gh_pages_token}}
+    - name: npm-publish
+      run: |
+        npm version from-git
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.npm_token}}

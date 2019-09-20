@@ -1,27 +1,26 @@
 name: CI Development
 on:
   push:
-    branches-ignore:
-      - 'master'
-    tags-ignore:
-      - '*'
+    branches:
+    - '!master'
+    - '!gh-pages'
 
 jobs:
   npm-ci-cd-dev:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with: {node-version: 10.x}
-      - name: npm-install
-        run:  npm install
-      - name: npm-lint
-        run:  npm run lint
-      - name: npm-build
-        run:  npm run build
-      - name: npm-test
-        uses: paambaati/codeclimate-action@v2.2.1
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.cc_token}}
-        with:
-          coverageCommand: npm run test
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with: {node-version: 10.x}
+    - name: npm-install
+      run:  npm install
+    - name: npm-lint
+      run:  npm run lint
+    - name: npm-build
+      run:  npm run build
+    - name: npm-test
+      uses: paambaati/codeclimate-action@v2.2.1
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.cc_token}}
+      with:
+        coverageCommand: npm run test
