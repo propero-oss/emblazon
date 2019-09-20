@@ -1,0 +1,23 @@
+{
+  "out": "docs",
+  "mode": "file",
+  "module": "esnext",
+  "name": "@propero/emblazon",
+  "entryPoint": "@propero/emblazon",
+  "readme": "README.md",
+  "tsconfig": "./tsconfig.build.json",
+  "excludeExternals": true,
+  "excludeNotExported": true,
+  "excludePrivate": true,
+  "includeDeclarations": true,
+  "externalPattern": [
+    "node_modules/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "dist/**/*"
+  ],
+  "src": [
+    "src/index.ts"
+  ]
+}
