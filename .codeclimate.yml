@@ -52,7 +52,7 @@ exclude_patterns:
   - "db/"
   - "dist/"
   - "node_modules/"
-  - "test/"
+  - "testicles/"
   - "**/*.d.ts"
   - ".mailmap"
   - "**/*.md"

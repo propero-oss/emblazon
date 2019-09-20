@@ -21,9 +21,9 @@
     "build": "webpack",
     "build:watch": "webpack --watch",
     "clean": "run-script-os",
-    "clean:default": "rm -rf dist",
-    "clean:windows": "rd /s /q dist",
-    "docs": "typedoc --out docs test",
+    "clean:default": "rm -rf dist docs",
+    "clean:windows": "rd /s /q dist && rd /s /q docs",
+    "docs": "typedoc",
     "meta": "npm run meta:authors && npm run meta:changelog",
     "meta:authors": "ngm authors --md --out AUTHORS.md",
     "meta:changelog": "ngm changelog --ignore changelog --ignore authors --md --out CHANGELOG.md"
