@@ -1,10 +1,9 @@
 name: CI Development
 on:
   push:
-    branches-ignore:
-    - master
-    tags-ignore:
-    - *
+    branches:
+    - '!master'
+    - '!gh-pages'
 
 jobs:
   npm-ci-cd-dev:
