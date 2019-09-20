@@ -3,6 +3,7 @@ const path = require('path');
 const pkg = require('./package.json');
 const dts = require('dts-bundle');
 const removeEmpty = require('remove-empty-directories');
+const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const paths = {
   src: './src',
@@ -32,6 +33,9 @@ module.exports = {
     libraryTarget: "umd",
     globalObject: "this",
   },
+  node: {
+    fs: "empty"
+  },
   externals: ['axios'],
   devServer: {
     contentBase: paths.dist,
@@ -41,7 +45,8 @@ module.exports = {
   },
   resolve: {
     enforceExtension: false,
-    extensions: [".ts",".tsx",".js",".jsx",".json"]
+    extensions: [".ts",".tsx",".js",".jsx",".json"],
+    plugins: [new TsConfigPathsPlugin({ configFile: "tsconfig.build.json" })]
   },
   module: {
     rules: [
