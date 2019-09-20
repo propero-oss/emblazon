@@ -1,27 +1,5 @@
 {
-  "compilerOptions": {
-    "module": "esnext",
-    "target": "es6",
-    "sourceMap": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "declaration": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "es7"
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ],
+  "extends": "tsconfig.build.json",
   "include": [
     "test/**/*.ts",
     "test/**/*.tsx"

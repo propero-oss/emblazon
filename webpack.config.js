@@ -5,9 +5,9 @@ const dts = require('dts-bundle');
 const removeEmpty = require('remove-empty-directories');
 
 const paths = {
-  src: './test',
+  src: './src',
   dist: './dist',
-  entry: './test/index.ts'
+  entry: './src/index.ts'
 };
 
 Object.keys(paths).forEach(key => paths[key] = path.join(__dirname, paths[key]));
@@ -47,8 +47,11 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          configFile: "tsconfig.build.json"
+        }
       }
     ]
   },
