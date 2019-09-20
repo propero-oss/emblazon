@@ -14,12 +14,12 @@ jobs:
         run:  npm run lint
       - name: npm-build
         run:  npm build
-      - name: npm-testicles
+      - name: npm-test
         uses: paambaati/codeclimate-action@v2.2.1
         env:
           CC_TEST_REPORTER_ID: ${{secrets.cc_token}}
         with:
-          coverageCommand: npm run testicles
+          coverageCommand: npm run test
       - name: npm-meta
         if:   github.ref == 'master'
         run:  npm run meta
