@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-    tags_ignore:
+    tags-ignore:
       - *
 
 jobs:

@@ -1,7 +1,7 @@
-name: CI / CD Master
+name: CI / CD Release
 on:
   push:
-    branches_ignore:
+    branches-ignore:
       - *
     tags:
       - v*

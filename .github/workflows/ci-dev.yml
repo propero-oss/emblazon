@@ -1,9 +1,9 @@
 name: CI Development
 on:
   push:
-    branches_ignore:
+    branches-ignore:
       - master
-    tags_ignore:
+    tags-ignore:
       - *
 
 jobs:
