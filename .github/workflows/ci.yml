@@ -13,7 +13,7 @@ jobs:
       - name: npm-lint
         run:  npm run lint
       - name: npm-build
-        run:  npm build
+        run:  npm run build
       - name: npm-test
         uses: paambaati/codeclimate-action@v2.2.1
         env:
