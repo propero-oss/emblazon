@@ -21,20 +21,20 @@ jobs:
         with:
           coverageCommand: npm run testicles
       - name: npm-meta
-        if:   github.ref == master
+        if:   github.ref == 'master'
         run:  npm run meta
       - name: npm-docs
-        if:   github.ref == master
+        if:   github.ref == 'master'
         run:  npm run docs
       - name: gh-pages
-        if:   github.ref == master
+        if:   github.ref == 'master'
         uses: maxheld83/ghpages@v0.2.1
         with:
           GH_PAT: ${{secrets.gh_pages_token}}
         env:
           BUILD_DIR: docs/
       - name: npm-publish
-        if:   github.event.ref_type == tag
+        if:   github.event.ref_type == 'tag'
         run: |
           npm version from-git
           npm publish
