@@ -2,9 +2,9 @@ name: CI / CD Master
 on:
   push:
     branches:
-      - master
+      - 'master'
     tags-ignore:
-      - *
+      - '*'
 
 jobs:
   npm-ci-cd-master:

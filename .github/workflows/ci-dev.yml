@@ -2,9 +2,9 @@ name: CI Development
 on:
   push:
     branches-ignore:
-      - master
+      - 'master'
     tags-ignore:
-      - *
+      - '*'
 
 jobs:
   npm-ci-cd-dev:
