@@ -1,5 +1,5 @@
 import "jasmine";
-import {EMBLAZON} from "src/testicles";
+import {EMBLAZON} from "@/index";
 
 
 
